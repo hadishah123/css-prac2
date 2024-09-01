@@ -1,0 +1,84 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(90deg,#cd4d46,#7f2bcf) */
+    background: content-box radial-gradient(rgb(115, 102, 123), rgb(246, 246, 246));
+}
+.element{
+    padding: 20px;
+    margin-top: 50%;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(66, 6, 90);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: white;
+    font-family: cursive;
+
+    /* animation-name: spin;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: alternate;
+    animation-play-state: running;
+    &:hover{
+        animation-play-state: paused;
+    } */
+
+    border-radius: 50%;
+
+    animation: 2s spin ease-in-out 1s infinite alternate ;
+}
+
+@keyframes spin {
+    0%{
+        background: linear-gradient(45deg,#1f4ad8,#39a606);
+        /* transform: rotate(360deg); */
+    }  
+    50%{
+        scale: 2;
+        transform: rotate(0);
+        border-radius: 0;
+        background: linear-gradient(to 45deg,rgb(0, 255, 38), rgb(123, 30, 210));
+    }
+    100%{
+        transform: rotate(360deg);
+        border-radius: 50%;
+        background: linear-gradient(to right, rgb(123, 30, 210),rgb(0, 255, 38));
+    } 
+}
+
+
+button{
+    margin: 10px;
+    margin-top: 70%;
+    padding: 9px 25px;
+    background-color: chartreuse;
+    border-radius: 9px;
+    font-weight: 600;
+}
+#playbt{
+    background-color: chocolate;
+    border: none;
+    &:hover{
+        scale: 1.1;
+        color: chartreuse;
+        transition: 0.3s ease-in;
+        border: 2px solid black;
+    }
+}
+#pausebt{
+    background-color: chartreuse;
+    border: none;
+    &:hover{
+        scale: 1.1;
+        color: chocolate;
+        transition: 0.3s ease-in;
+        border: 2px solid black;
+    }
+}
