@@ -9,17 +9,9 @@
 <body>
     <div>
         <p class="element"> AHS Review </p>
-        <button id="playbt">PLAY</button>
-        <button id="pausebt">PAUSE</button>
+        <button id="togglebt" aria-label="Play/Pause">PLAY</button>
     </div>
 
-    <script>
-        const element = document.getElementsByClassName('element')[0]
-        const Play=document.getElementById("playbt")
-        const Pause=document.getElementById("pausebt")
-
-        Play.addEventListener('click',()=>element.style.animationPlayState = "running")
-        Pause.addEventListener('click',()=>element.style.animationPlayState = "paused")
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
