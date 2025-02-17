@@ -1,11 +1,22 @@
-body{
+:root {
+    --primary-color: #1f4ad8;
+    --secondary-color: #39a606;
+    --highlight-color: #7f2bcf;
+    --text-color: white;
+    --button-hover-color: chocolate;
+    --button-bg-color: chartreuse;
+}
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background: linear-gradient(90deg,#cd4d46,#7f2bcf) */
-    background: content-box radial-gradient(rgb(115, 102, 123), rgb(246, 246, 246));
+    background: radial-gradient(circle at center, rgb(115, 102, 123), rgb(246, 246, 246));
+    height: 100vh;
+    margin: 0;
 }
-.element{
+
+.element {
     padding: 20px;
     margin-top: 50%;
     width: 200px;
@@ -16,69 +27,47 @@ body{
     justify-content: center;
     font-size: 1.35rem;
     font-weight: 700;
-    color: white;
+    color: var(--text-color);
     font-family: cursive;
-
-    /* animation-name: spin;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-delay: 1s;
-    animation-direction: alternate;
-    animation-play-state: running;
-    &:hover{
-        animation-play-state: paused;
-    } */
-
     border-radius: 50%;
-
-    animation: 2s spin ease-in-out 1s infinite alternate ;
+    animation: spin 2s ease-in-out 1s infinite alternate;
 }
 
 @keyframes spin {
-    0%{
-        background: linear-gradient(45deg,#1f4ad8,#39a606);
-        /* transform: rotate(360deg); */
-    }  
-    50%{
-        scale: 2;
-        transform: rotate(0);
-        border-radius: 0;
-        background: linear-gradient(to 45deg,rgb(0, 255, 38), rgb(123, 30, 210));
+    0% {
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     }
-    100%{
+    50% {
+        transform: scale(1.2);
+        background: linear-gradient(to 45deg, rgb(0, 255, 38), rgb(123, 30, 210));
+    }
+    100% {
         transform: rotate(360deg);
-        border-radius: 50%;
-        background: linear-gradient(to right, rgb(123, 30, 210),rgb(0, 255, 38));
-    } 
+        background: linear-gradient(to right, var(--highlight-color), var(--secondary-color));
+    }
 }
 
-
-button{
+button {
     margin: 10px;
     margin-top: 70%;
     padding: 9px 25px;
-    background-color: chartreuse;
+    background-color: var(--button-bg-color);
     border-radius: 9px;
     font-weight: 600;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
-#playbt{
-    background-color: chocolate;
-    border: none;
-    &:hover{
-        scale: 1.1;
-        color: chartreuse;
-        transition: 0.3s ease-in;
-        border: 2px solid black;
-    }
+
+button:hover {
+    scale: 1.1;
+    color: var(--highlight-color);
+    background-color: var(--button-hover-color);
+    border: 2px solid var(--highlight-color);
 }
-#pausebt{
-    background-color: chartreuse;
-    border: none;
-    &:hover{
-        scale: 1.1;
-        color: chocolate;
-        transition: 0.3s ease-in;
-        border: 2px solid black;
-    }
+
+button:focus {
+    outline: none;
+    border: 2px solid var(--highlight-color);
+    box-shadow: 0 0 10px var(--highlight-color);
 }
