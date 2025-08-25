@@ -17,10 +17,10 @@ body {
 }
 
 .element {
-    padding: 20px;
+    padding: 25px;
     margin-top: 50%;
-    width: 200px;
-    height: 200px;
+    width: 210px;
+    height: 210px;
     background-color: rgb(66, 6, 90);
     display: flex;
     align-items: center;
@@ -71,3 +71,4 @@ button:focus {
     border: 2px solid var(--highlight-color);
     box-shadow: 0 0 10px var(--highlight-color);
 }
+
